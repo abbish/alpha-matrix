@@ -11,15 +11,16 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Bell, Menu, Search } from "lucide-react"
+import { Bell, Menu } from "lucide-react"
 import { useState } from "react"
+// import { Input } from "@/components/ui/input" // Removed Input import
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-      <div className="flex items-center gap-2 md:gap-4 lg:gap-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 shrink-0">
+      <div className="flex items-center gap-2 md:gap-4 lg:gap-6 flex-1">
         <Button
           variant="outline"
           size="icon"
@@ -49,12 +50,17 @@ export function Header() {
           <span className="text-lg font-bold">Alpha Matrix</span>
         </Link>
       </div>
-      <div className="flex-1"></div>
+
+      {/* 居中搜索框 */}
+      {/* <div className="flex-1 flex justify-center">
+        <div className="relative w-full max-w-md">
+          <Input type="text" placeholder="搜索策略、指标或用户..." className="pl-10 pr-4 py-2 w-full" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Button className="absolute right-0 top-0 h-full rounded-l-none">搜索</Button>
+        </div>
+      </div> */}
+
       <div className="flex items-center gap-4">
-        <Button variant="outline" size="icon" className="text-muted-foreground">
-          <Search className="h-5 w-5" />
-          <span className="sr-only">搜索</span>
-        </Button>
         <Button variant="outline" size="icon" className="text-muted-foreground">
           <Bell className="h-5 w-5" />
           <span className="sr-only">通知</span>
