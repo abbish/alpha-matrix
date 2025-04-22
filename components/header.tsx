@@ -11,12 +11,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Bell, Menu, Moon, Search, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Bell, Menu, Search } from "lucide-react"
 import { useState } from "react"
 
 export function Header() {
-  const { setTheme } = useTheme()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
@@ -63,20 +61,6 @@ export function Header() {
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" className="rounded-full">
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">切换主题</span>
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>浅色</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>深色</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("system")}>系统</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon" className="relative h-8 w-8 rounded-full">
               <Avatar className="h-8 w-8">
                 <AvatarImage src="/vibrant-street-market.png" alt="用户头像" />
@@ -88,7 +72,13 @@ export function Header() {
             <DropdownMenuLabel>我的账户</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>个人资料</DropdownMenuItem>
-            <DropdownMenuItem>设置</DropdownMenuItem>
+            <DropdownMenuItem>账户设置</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>订阅管理</DropdownMenuItem>
+            <DropdownMenuItem>交易额度</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>帮助中心</DropdownMenuItem>
+            <DropdownMenuItem>联系客服</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>退出登录</DropdownMenuItem>
           </DropdownMenuContent>

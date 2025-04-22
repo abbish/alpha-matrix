@@ -67,7 +67,14 @@ export default function LoginPage() {
                   <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <Mail className="h-5 w-5 text-gray-400" />
                   </div>
-                  <Input id="email" type="email" placeholder="name@company.com" required className="pl-10" />
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="name@company.com"
+                    required
+                    className="pl-10"
+                    defaultValue="demo@alphamatrix.com"
+                  />
                 </div>
               </div>
               <div className="space-y-2">
@@ -87,6 +94,7 @@ export default function LoginPage() {
                     placeholder="••••••••"
                     required
                     className="pl-10"
+                    defaultValue="demo123456"
                   />
                   <button
                     type="button"

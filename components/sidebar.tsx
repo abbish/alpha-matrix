@@ -21,16 +21,16 @@ export function Sidebar() {
   }
 
   return (
-    <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40">
+    <div className="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 w-48">
       <div className="flex h-full max-h-screen flex-col gap-2">
         <div className="flex-1 overflow-auto py-2">
-          <nav className="grid items-start px-2 text-sm font-medium">
-            <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400">仪表盘</div>
+          <nav className="grid items-start px-4 text-sm font-medium gap-1">
+            <div className="px-3 py-3 text-sm font-semibold text-gray-500 dark:text-gray-400">仪表盘</div>
             <Link href="/dashboard" className={`sidebar-item ${isActive("/dashboard") ? "active" : ""}`}>
               <LayoutDashboard className="sidebar-item-icon" />
-              仪表盘
+              交易看板
             </Link>
-            <div className="px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400">交易应用</div>
+            <div className="px-3 py-3 text-sm font-semibold text-gray-500 dark:text-gray-400">交易应用</div>
             <Link href="/apps" className={`sidebar-item ${isActive("/apps") ? "active" : ""}`}>
               <BarChart3 className="sidebar-item-icon" />
               应用

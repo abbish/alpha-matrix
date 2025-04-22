@@ -1,6 +1,7 @@
 import type React from "react"
 import { Sidebar } from "@/components/sidebar"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 export default function DashboardLayout({
   children,
@@ -12,8 +13,9 @@ export default function DashboardLayout({
       <Header />
       <div className="flex flex-1">
         <Sidebar />
-        <main className="flex-1 p-6 bg-gray-50">{children}</main>
+        <main className="flex-1 p-6 bg-gray-50 overflow-x-auto">{children}</main>
       </div>
+      <Footer simplified />
     </div>
   )
 }
